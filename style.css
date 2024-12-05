@@ -1,0 +1,213 @@
+@import url("https://use.fontawesome.com/releases/v6.4.2/css/all.css");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+
+
+*,
+*:before,
+*:after {
+    /* Slow, yes I know :) */
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #353138;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    font-family: "Lato", Sans-serif;
+    font-size: 12px;
+    perspective: 1300px;
+}
+
+.menu {
+    width: 300px;
+    background: linear-gradient(to bottom, #62278d 0%, #2cc09b 100%);
+    color: #fff;
+    border-color: #fff;
+    border-width: 20px 0;
+    border-style: solid;
+    height: 540px;
+    transform-style: preserve-3d;
+    transform: translateY(-150px) rotateX(45deg) rotateZ(45deg);
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 0 50px 0 #444;
+}
+
+.menu:before {
+    content: '';
+    background: #fff;
+    position: absolute;
+    height: 30px;
+    width: 300px;
+    top: 520px;
+    left: 0px;
+    transform: rotateX(90deg) translateY(-15px) translateZ(15px);
+    pointer-events: none;
+}
+
+.menu:after {
+    content: '';
+    position: absolute;
+    height: 540px;
+    background: linear-gradient(to bottom, #62278d 0%, #2cc09b 100%);
+    width: 30px;
+    top: -20px;
+    right: -30px;
+    transform: rotateY(90deg) translateZ(-15px) translateX(15px);
+    border-color: #fff;
+    border-width: 20px 0;
+    border-style: solid;
+    pointer-events: none;
+}
+
+.top {
+    padding: 15px 15px 15px 20px;
+    width: 100%;
+}
+
+.search {
+    position: relative;
+    display: inline-block;
+}
+
+input {
+    width: 60px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    transition: all 100ms ease-in-out;
+    color: transparent;
+    border-radius: 20px;
+    padding: 10px 30px 10px 15px;
+    outline: 0 none;
+    transform: translateZ(1px);
+}
+
+input:focus {
+    width: 200px;
+    color: #fff;
+}
+
+.search:after {
+    content: '\f002';
+    font-family: 'FontAwesome';
+    font-size: 16px;
+    position: absolute;
+    color: #fff;
+    top: 11px;
+    right: 18px;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+    transform: translateZ(1px);
+}
+
+.exit {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    outline: 0 none;
+    float: right;
+    cursor: pointer;
+    transform: translateZ(1px);
+}
+
+.exit:focus {
+    border: 1px solid #fff;
+    border-radius: 20px;
+}
+
+.exit:before {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 30px;
+    top: 14px;
+    left: -6px;
+    border-width: 0 2px 0 0;
+    border-style: solid;
+    border-color: #fff;
+    transform: rotate(-45deg);
+}
+
+.exit:after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 30px;
+    top: -6px;
+    left: -6px;
+    border-width: 0 2px 0 0;
+    border-style: solid;
+    border-color: #fff;
+    transform: rotate(45deg);
+}
+
+.middle {
+    min-height: 40px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
+    transform-style: preserve-3d;
+}
+
+li {
+    margin: 0;
+    padding: 15px 0 15px 40px;
+    outline: 0 none;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(1px);
+}
+
+li:hover {
+    box-shadow: inset 0 0 80px 0 rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+
+li:hover:before {
+    content: '\f0da';
+    font-family: 'FontAwesome';
+    font-size: 16px;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+
+li .fa {
+    padding-right: 15px;
+}
+
+li:hover:after {
+    content: attr(data-content);
+    font-family: 'FontAwesome';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 48px;
+    width: 30px;
+    top: 0px;
+    right: -30px;
+    transform: rotateY(90deg) translateZ(-14px) translateX(15px);
+    pointer-events: none;
+    box-shadow: inset 0 0 80px 0 rgba(255, 255, 255, 0.3);
+}
+
+Resources
